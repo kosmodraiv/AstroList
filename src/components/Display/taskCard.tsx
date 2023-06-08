@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 
+import axios from 'axios';
+
 const TaskCard = ({ isTaskCardVisible }) => {
+	const [tags, setTags] = useState([])
+
+	const getData = async () => {
+		const { data } = await axios.get('https://lab.lectrum.io/rtx/api/v2/todos/tags');
+		setTags(data);
+	}
+
+	useEffect(() => {
+		getData();
+	}, []);
+
+
 	if (!isTaskCardVisible) {
 		return null;
 	  }
@@ -45,7 +59,9 @@ const TaskCard = ({ isTaskCardVisible }) => {
 					</div>
 
 					<div className="tags"></div>
-
+					{tags.map(item => (
+      					<span key={item.id}>{item.name}</span>
+    				))}
 					<div className="errors"></div>
 
 					<div className="form-controls">

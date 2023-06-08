@@ -1,4 +1,5 @@
 import Display from "./components/Display/display";
+import Header from "./components/Header";
 // import Login from "./components/Login";
 // import Register from "./components/Register";
 
@@ -9,6 +10,7 @@ const App = () => {
   return (
 
     <>
+      <Header />
       <Display />
       {/* <Login /> */}
       {/* <Register /> */}
