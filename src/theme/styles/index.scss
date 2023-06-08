@@ -74,7 +74,7 @@ nav {
     margin: 0 auto;
 
     form {
-        background-color: white;
+        background-color: #181A1B;
         border-radius: 10px;
         padding: 50px 40px;
     }
@@ -111,6 +111,7 @@ nav {
         width: 100%;
         margin-bottom: 15px;
         color: $color2;
+        
 
         .errorMessage {
             color: #8D211D;
@@ -120,12 +121,13 @@ nav {
         input {
             width: 100%;
             border: none;
-            border-bottom: 1px solid #ececec;
+            border-bottom: 1px solid #65635E;
             padding: 10px 0;
             outline: none;
-            color: #252631;
+            color: #CDC8C2;
             font-size: 20px;
             margin-bottom: 5px;
+            background-color: #181A1B;
 
             &::-webkit-input-placeholder {
                 color: #98a9bc;
@@ -378,6 +380,7 @@ main {
     background-color: $color6;
     padding-bottom: 50px;
 
+
     .head {
         display: flex;
         align-items: center;
@@ -463,13 +466,14 @@ main {
         padding-left: 26px;
         padding-right: 44px;
         max-height: 596px;
-        overflow-y: scroll;
+        overflow-y: none;
 
         .label {
             display: block;
             font-size: 22px;
             color: $color2;
             margin-bottom: 14px;
+        
         }
 
         .title {
@@ -479,6 +483,7 @@ main {
             color: $color4;
             font-size: 16px;
             margin-bottom: 32px;
+            background-color: $color6;
 
             &::placeholder {
                 color: $color2;
@@ -498,6 +503,7 @@ main {
                     color: $color4;
                     border: none;
                     outline: none;
+                    background-color: $color6;
                 }
 
                 &::before {
@@ -522,6 +528,7 @@ main {
                 font-size: 16px;
                 line-height: 21px;
                 color: $color4;
+                background-color: $color6;
 
                 &::placeholder {
                     color: $color2;

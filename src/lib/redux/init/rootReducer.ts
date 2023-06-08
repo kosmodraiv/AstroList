@@ -1,9 +1,10 @@
 // Core
 import { combineReducers } from 'redux';
+import taskCardReducer from '../taskCard/taskCardReducer';
 
 // Reducers
 
 
 export const rootReducer = combineReducers({
-    tmp: () => ({}),
+    taskCard: taskCardReducer,
 });

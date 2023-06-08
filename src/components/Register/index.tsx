@@ -13,7 +13,6 @@ const Register = () => {
 						<input placeholder="Электропочта" type="text" name="email"></input>
 					</label>
 					<label className="label">
-						{' '}
 						<input placeholder="Пароль" type="password" name="name"></input>
 					</label>
 					<label className="label">
@@ -23,9 +22,15 @@ const Register = () => {
 							name="confirmPassword"
 						></input>
 					</label>
-                    <input className='button-login' type='submit' value="Зарегистрироваться"></input>
+					<input
+						className="button-login"
+						type="submit"
+						value="Зарегистрироваться"
+					></input>
 				</fieldset>
-                <p>Перейти к <a>логину</a></p>
+				<p>
+					Перейти к <a>логину</a>
+				</p>
 			</form>
 		</section>
 	)

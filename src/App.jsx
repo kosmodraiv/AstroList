@@ -1,15 +1,19 @@
-import Register from "./components/Register";
+import Display from "./components/Display/display";
+// import Login from "./components/Login";
+// import Register from "./components/Register";
 
 import "./theme/styles/index.scss"
 
 
 const App = () => {
   return (
+
     <>
-    <main>
-      <Register />
-    </main>
+      <Display />
+      {/* <Login /> */}
+      {/* <Register /> */}
     </>
+
   );
 };
 
