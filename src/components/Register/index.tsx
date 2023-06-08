@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Register = () => {
 	return (
@@ -29,7 +30,7 @@ const Register = () => {
 					></input>
 				</fieldset>
 				<p>
-					Перейти к <a>логину</a>
+					Перейти к <Link to="/login">логину</Link>
 				</p>
 			</form>
 		</section>

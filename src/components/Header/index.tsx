@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
     return (
     <nav>
-        <a>Войти</a>
+        <Link to="/login">Войти</Link>
         <a>К задачам</a>
     </nav>
     )
