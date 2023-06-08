@@ -13,6 +13,11 @@ const Login = () => {
 					<label className="label">
 						<input placeholder="Пароль" type="password" name="name"></input>
 					</label>
+					<input
+						className="button-login"
+						type="submit"
+						value="Войти"
+					></input>
 				</fieldset>
 				<p>
                 Если у вас до сих пор нет учётной записи, вы можете <a>зарегистрироваться</a>

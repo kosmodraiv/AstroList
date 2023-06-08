@@ -1,24 +1,32 @@
 import React, { useEffect, useState } from 'react'
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
-import axios from 'axios';
+import axios from 'axios'
+
+interface tagsType {
+	id: string
+	name: string
+	color: string
+	bg: string
+}
 
 const TaskCard = ({ isTaskCardVisible }) => {
-	const [tags, setTags] = useState([])
+	const [tags, setTags] = useState<tagsType[]>([])
 
 	const getData = async () => {
-		const { data } = await axios.get('https://lab.lectrum.io/rtx/api/v2/todos/tags');
-		setTags(data);
+		const { data } = await axios.get(
+			'https://lab.lectrum.io/rtx/api/v2/todos/tags'
+		)
+		setTags(data)
 	}
 
 	useEffect(() => {
-		getData();
-	}, []);
-
+		getData()
+	}, [])
 
 	if (!isTaskCardVisible) {
-		return null;
-	  }
+		return null
+	}
 
 	return (
 		<div className="task-card">
@@ -58,10 +66,17 @@ const TaskCard = ({ isTaskCardVisible }) => {
 						</label>
 					</div>
 
-					<div className="tags"></div>
+					<div className="tags">
 					{tags.map(item => (
-      					<span key={item.id}>{item.name}</span>
-    				))}
+						<span
+							key={item.id}
+							className="tag"
+							style={{ color: item.color, backgroundColor: item.bg }}
+						>
+							{item.name}
+						</span>
+					))}
+					</div>
 					<div className="errors"></div>
 
 					<div className="form-controls">
@@ -78,8 +93,8 @@ const TaskCard = ({ isTaskCardVisible }) => {
 	)
 }
 
-const mapStateToProps = (state) => ({
-	isTaskCardVisible: state.taskCard.isTaskCardVisible,
-});
+const mapStateToProps = state => ({
+	isTaskCardVisible: state.taskCard.isTaskCardVisible
+})
 
-export default connect(mapStateToProps)(TaskCard);
+export default connect(mapStateToProps)(TaskCard)
