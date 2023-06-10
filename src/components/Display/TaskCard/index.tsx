@@ -1,31 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
+import Tags from './tags'
 
-import axios from 'axios'
-
-interface tagsType {
-	id: string
-	name: string
-	color: string
-	bg: string
-}
 
 const TaskCard = ({ isTaskCardVisible }) => {
-	const [tags, setTags] = useState<tagsType[]>([])
-
-	const getData = async () => {
-		const { data } = await axios.get(
-			'https://lab.lectrum.io/rtx/api/v2/todos/tags'
-		)
-		setTags(data)
-	}
-
-	useEffect(() => {
-		getData()
-	}, [])
+	const today = new Date();
+	const [selectedDate, setSelectedDate] = useState(today)
+	
 
 	if (!isTaskCardVisible) {
 		return null
+	}
+
+	const handleDateChange = date => {
+		setSelectedDate(date)
 	}
 
 	return (
@@ -43,13 +33,16 @@ const TaskCard = ({ isTaskCardVisible }) => {
 							name="title"
 						/>
 					</label>
-
 					<div className="deadline">
 						<span className="label">Дедлайн</span>
 						<span className="date">
 							<div className="react-datepicker-wrapper">
 								<div className="react-datepicker__input-container">
-									<input type="text" value="" />
+									<DatePicker
+										selected={selectedDate}
+										onChange={handleDateChange}
+										minDate={today}
+									/>
 								</div>
 							</div>
 						</span>
@@ -66,19 +59,9 @@ const TaskCard = ({ isTaskCardVisible }) => {
 						</label>
 					</div>
 
-					<div className="tags">
-					{tags.map(item => (
-						<span
-							key={item.id}
-							className="tag"
-							style={{ color: item.color, backgroundColor: item.bg }}
-						>
-							{item.name}
-						</span>
-					))}
-					</div>
-					<div className="errors"></div>
+					<Tags />
 
+					<div className="errors"></div>
 					<div className="form-controls">
 						<button className="button-reset-task" type="reset" disabled>
 							Reset
