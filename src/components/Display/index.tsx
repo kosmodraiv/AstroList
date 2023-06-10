@@ -1,35 +1,35 @@
-import React from 'react';
-import TaskCard from './taskCard';
-import { connect } from 'react-redux';
-import { showTaskCard } from '../../lib/redux/taskCard/taskCardActions';
+import React from 'react'
+import TaskCard from './TaskCard'
+import { connect } from 'react-redux'
+import { showTaskCard } from '../../lib/redux/taskCard/taskCardActions'
 
 const Display = ({ showTaskCard }) => {
-  const handleClick = () => {
-    showTaskCard();
-  };
+	const handleClick = () => {
+		showTaskCard()
+	}
 
-  return (
-    <main>
-      <div className="controls">
-        <i className="las" />
-        <button className="button-create-task" onClick={handleClick}>
-          Новая задача
-        </button>
-      </div>
+	return (
+		<main>
+			<div className="controls">
+				<i className="las" />
+				<button className="button-create-task" onClick={handleClick}>
+					Новая задача
+				</button>
+			</div>
 
-      <div className="wrap">
-        <div className="list empty">
-          <div className="tasks"></div>
-        </div>
+			<div className="wrap">
+				<div className="list empty">
+					<div className="tasks"></div>
+				</div>
 
-        <TaskCard />
-      </div>
-    </main>
-  );
-};
+				<TaskCard />
+			</div>
+		</main>
+	)
+}
 
 const mapDispatchToProps = {
-  showTaskCard
-};
+	showTaskCard
+}
 
-export default connect(null, mapDispatchToProps)(Display);
+export default connect(null, mapDispatchToProps)(Display)

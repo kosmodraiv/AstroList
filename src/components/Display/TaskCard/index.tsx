@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
+
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+import { registerLocale, setDefaultLocale } from 'react-datepicker'
+import es from 'date-fns/locale/ru'
+registerLocale('ru', es)
+
 import Tags from './tags'
 
-
 const TaskCard = ({ isTaskCardVisible }) => {
-	const today = new Date();
+	const today = new Date()
 	const [selectedDate, setSelectedDate] = useState(today)
-	
 
 	if (!isTaskCardVisible) {
 		return null
@@ -33,18 +36,17 @@ const TaskCard = ({ isTaskCardVisible }) => {
 							name="title"
 						/>
 					</label>
+
 					<div className="deadline">
 						<span className="label">Дедлайн</span>
 						<span className="date">
-							<div className="react-datepicker-wrapper">
-								<div className="react-datepicker__input-container">
-									<DatePicker
-										selected={selectedDate}
-										onChange={handleDateChange}
-										minDate={today}
-									/>
-								</div>
-							</div>
+							<DatePicker
+								selected={selectedDate}
+								onChange={handleDateChange}
+								minDate={today}
+								locale="ru"
+								dateFormat="dd MMM yyyy"
+							/>
 						</span>
 					</div>
 
