@@ -480,13 +480,13 @@ main {
             width: 100%;
             border: none;
             outline: none;
-            color: $color4;
+            color: $color2;
             font-size: 16px;
             margin-bottom: 32px;
             background-color: $color6;
 
             &::placeholder {
-                color: $color2;
+                color: $color4;
             }
         }
 
@@ -500,7 +500,7 @@ main {
                 input {
                     font-size: 16px;
                     font-weight: 600;
-                    color: $color4;
+                    color: $color2;
                     border: none;
                     outline: none;
                     background-color: $color6;
@@ -527,11 +527,11 @@ main {
                 outline: none;
                 font-size: 16px;
                 line-height: 21px;
-                color: $color4;
+                color: $color2;
                 background-color: $color6;
 
                 &::placeholder {
-                    color: $color2;
+                    color: $color4;
                 }
             }
         }

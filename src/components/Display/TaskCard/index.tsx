@@ -31,7 +31,7 @@ const TaskCard = ({ isTaskCardVisible }) => {
 						Задачи
 						<input
 							className="title"
-							placeholder="Пройти интенсив по React + Redux + TS + Mobx"
+							placeholder="Пройти интенсив по React + Redux + TS + Mobx..."
 							type="text"
 							name="title"
 						/>
@@ -55,7 +55,7 @@ const TaskCard = ({ isTaskCardVisible }) => {
 							Описание
 							<textarea
 								className="text"
-								placeholder="После изучения всех технологий, завершить работу над проектами и найти работу."
+								placeholder="После изучения всех технологий, завершить работу над проектами и найти работу..."
 								name="description"
 							/>
 						</label>
